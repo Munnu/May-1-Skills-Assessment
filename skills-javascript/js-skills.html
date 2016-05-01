@@ -98,6 +98,13 @@
 
 <script>
   // code here for above problem
+  // for pupup-alert-button
+  var popupAlertButton = document.getElementById('popup-alert-button');
+  popupAlertButton.addEventListener('click', function(){
+                                                alert("!!!!!");
+                                              });
+
+
 </script>
 
 
@@ -116,6 +123,14 @@
 
 <script>
   // code here for above-problem
+  // for changing text section
+  var helloGoodbye = document.getElementById("message-to-change");
+  var helloGoodbyeButton = document.getElementById('change-hello-to-goodbye-button');
+
+  helloGoodbyeButton.addEventListener('click', function() { 
+      helloGoodbye.innerText = 'Goodbye';
+    });
+
 </script>
 
 <div class="hint">
@@ -145,6 +160,15 @@
 
 <script>
   // code here for above problem
+  // for preventing form submission section
+  var preventSubmission = document.getElementById('prevent-form-submission-form');
+
+  function preventFormSubmit(evt) {
+    evt.preventDefault();
+    alert("What are you doing?!");
+  }
+
+  preventSubmission.addEventListener('submit', preventFormSubmit);
 </script>
 
 <div class="hint">
@@ -176,20 +200,20 @@
 <script>
 //  Here's a stub of a function you can use!
 
-//  function reverseString() {
-//    var msg = "Porcupines are cute";
-//
-//    // do some stuff here to reverse that string into a new variable
-//    var newMsg = "This should be the reversed string";
-//
-//    alert(newMsg);
-//  }
+ function reverseString() {
+   var msg = "Porcupines are cute";
+   var newMsg = ""; // initialized!
+   // do some stuff here to reverse that string into a new variable
+   for (var i = msg.length-1; i >= 0; i--) {
+      newMsg = newMsg + msg[i];
+   }
+   alert(newMsg);
+ }
 
 // Here's a stub of event stuff you could use
-//
 
-//  var button = document.getElementById('reverse-string-button');
-//  button.addEventListener('click', reverseString);
+ var button = document.getElementById('reverse-string-button');
+ button.addEventListener('click', reverseString);
 </script>
 
 
@@ -212,8 +236,18 @@
   <input type="button" class="tricky-to-find" value="Pop-Up Please!">
 </fieldset>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script>
   // code here for above problem
+  function popUpPlease(evt) {
+    alert("Pop up!");
+  }
+
+  // deliberately not putting it into condensed version for learning purposes
+  $('.tricky-to-find').click(popUpPlease);
+
+  // could also be written as
+  // $('.tricky-to-find').click(function(evt) {alert("Pop up!");});
 </script>
 
 <div class="hint">
@@ -241,6 +275,11 @@
 
 <script>
   // put your code here
+
+  // sorry, dogs scare me a little... disobey.
+  $("img#kittenz-rule").click(function() {     
+            $("img#kittenz-rule").attr("src", "http://i.huffpost.com/gen/1099617/images/o-TURTLE-facebook.jpg").attr("height", 250);
+          });
 </script>
 
 <div class="hint">
@@ -274,6 +313,12 @@
 
 <script>
   // put your code here
+  $("#make-a-porcupine").click(function (evt) {
+    setTimeout(function() {    
+      $("#cute-porcupine-image").fadeIn(2000);
+    }, 1000);
+  });
+
 </script>
 
 <div class="hint">
@@ -459,6 +504,5 @@
 </script>
 
 
-<script src="js-skills.js"></script>
 </body>
 </html>
